@@ -1,0 +1,38 @@
+.main_btn {
+  width: 110px;
+  display: block;
+  padding: 10px 9px;
+  text-align: center;
+  border: solid 1px #999;
+  border-radius: 3px;
+  transition-delay: 0.2s;
+  color: #444;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  cursor: pointer;
+  font: {
+    weight: bold;
+    size: 1.3rem;
+  }
+  text-transform: uppercase;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: $secManColor;
+    position: absolute;
+    transition: $mainTranstion;
+    left: -100%;
+    top: 0;
+    z-index: -1;
+  }
+  &:hover {
+    &::before {
+      left: 0;
+    }
+  }
+  &:hover {
+    color: #fff;
+  }
+}

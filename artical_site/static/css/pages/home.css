@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+}
+
+html {
+  overflow-x: hidden;
+  font-size: 70%;
+}
+
+section {
+  padding: 50px 0;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+.main_btn {
+  width: 110px;
+  display: block;
+  padding: 10px 9px;
+  text-align: center;
+  border: solid 1px #999;
+  border-radius: 3px;
+  transition-delay: 0.2s;
+  color: #444;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+}
+.main_btn::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: blueviolet;
+  position: absolute;
+  transition: 0.3s ease-in;
+  left: -100%;
+  top: 0;
+  z-index: -1;
+}
+.main_btn:hover::before {
+  left: 0;
+}
+.main_btn:hover {
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  height: 70px;
+  justify-content: space-between;
+  padding: 0 4rem;
+  align-items: center;
+  box-shadow: 0 7px 30px rgba(0, 0, 0, 0.1);
+}
+.header .logo a img {
+  width: 100px;
+}
+.header ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+}
+.header ul li a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 0 2rem;
+  margin: 0 2rem;
+  display: block;
+  padding: 10px 4rem;
+  text-transform: uppercase;
+  color: #222;
+  position: relative;
+}
+.header ul li a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  opacity: 0;
+  border: solid 2px #ddd;
+  transition: 0.3s ease-in;
+  border-width: 3px 0 0 3px;
+}
+.header ul li a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 14px;
+  height: 14px;
+  border: solid 2px #ddd;
+  border-width: 0 3px 3px 0;
+  opacity: 0;
+  transition: 0.3s ease-in;
+}
+.header ul li a:hover::before {
+  opacity: 1;
+  left: -4%;
+  top: -20%;
+}
+.header ul li a:hover::after {
+  opacity: 1;
+  right: -4%;
+  bottom: -20%;
+}
+.header ul li a:hover {
+  background-color: #f1f1f1;
+  color: blueviolet;
+}/*# sourceMappingURL=home.css.map */

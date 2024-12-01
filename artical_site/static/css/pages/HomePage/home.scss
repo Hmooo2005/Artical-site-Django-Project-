@@ -1,0 +1,84 @@
+@import "../../sass/helpers/variables";
+.home {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url("../../../../../media/background/pic14.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    .container {
+        .add_post {
+            width: 50%;
+            border-radius: 3px;
+            background-color: rgb(228, 218, 218);
+            transition: $mainTranstion;
+            &:hover {
+                background-color: #cac7c7;
+                scale: 1.01 1.01;
+            }
+            a {
+                padding: 13px 23px;
+                text-decoration: none;
+                display: block;
+                font: {
+                    size: 1.3rem;
+                    weight: bold;
+                };
+                color: rgb(13, 13, 85);
+                text-align: center;
+            }
+        }
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        .image-box {
+            overflow: hidden;
+            display: flex;
+            margin-bottom: 0.6rem;
+            align-items: center;
+            gap: 10px;
+            .author {
+                font-size: 1.5rem;
+                color: $mainTextColor;
+                margin-bottom: 0.2rem;
+            }
+            img {
+                object-fit: cover;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+            }
+        }
+        .box {
+            background-color: #fff;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            box-shadow: 0 7px 30px rgba(#000, 0.1);
+            justify-content: center;
+            position: relative;
+            border-radius: 5px;
+            .title {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 1rem;
+                a {
+                text-decoration: none;
+                color: $secManColor;
+                font: {
+                    size: 1.3rem;
+                    weight: bold;
+                };
+            }
+        }
+        .content {
+            line-height: 1.6;
+            font-size: 1.2rem;
+            color: #555;
+        }
+        }
+    }
+}

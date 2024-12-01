@@ -1,0 +1,21 @@
+// Start Gloabl Rules
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+}
+
+html {
+    overflow-x: hidden;
+    font-size: 70%;
+}
+
+section {
+    padding: 50px 0;
+    min-height: 100vh;
+}

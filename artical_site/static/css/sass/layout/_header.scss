@@ -1,0 +1,78 @@
+.header {
+  display: flex;
+  height: 70px;
+  justify-content: space-between;
+  padding: 0 4rem;
+  align-items: center;
+  box-shadow: 0 7px 30px rgba(#000, 0.1);
+  .logo {
+    a {
+      img {
+        width: 100px;
+      }
+    }
+  }
+  ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    li {
+      a {
+        text-decoration: none;
+        font : {
+          size: 1.4rem;
+          weight: bold;
+        }
+        padding: 0 2rem;
+        margin: 0 2rem;
+        display: block;
+        padding: 10px 4rem;
+        text-transform: uppercase;
+        color: $mainTextColor;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 14px;
+          height: 14px;
+          opacity: 0;
+          border: solid 2px #ddd;
+          transition: $mainTranstion;
+          border-width: 3px 0 0 3px;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          width: 14px;
+          height: 14px;
+          border: solid 2px #ddd;
+          border-width: 0 3px 3px 0;
+          opacity: 0;
+          transition: $mainTranstion;
+        }
+        &:hover {
+          &::before {
+            opacity: 1;
+            left: -4%;
+            top: -20%;
+          }
+        }
+        &:hover {
+          &::after {
+            opacity: 1;
+            right: -4%;
+            bottom: -20%;
+          }
+        }
+        &:hover {
+          background-color: $mainColor;
+          color: $secManColor;
+        }
+      }
+    }
+  }
+}
