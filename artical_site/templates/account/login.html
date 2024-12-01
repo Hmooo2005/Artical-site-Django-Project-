@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Login Css File -->
+	<link rel="stylesheet" href="{% static "css/pages/Login/login.css" %}">
+	<!-- Main Css File -->
+	<link rel="stylesheet" href="{% static "css/pages/mainFile/main.css" %}">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<section class="login">
+		<div class="container">
+			<div class="image_box">
+			</div>
+            <div class="box">
+				{% for message in messages %}
+				<div class="message">
+				  {{ message }}
+				</div>
+				{% endfor %} {% comment %} green massage {% for message in messages %}
+				<div class="message">
+				  {{ message }}
+				</div>
+				{% endfor %} {% comment %} green massage appear in login page when the user
+				have make register for the first time this message apear one time only! {%
+				endcomment %}
+			
+				<form method="post">
+				  {% csrf_token %} {{ form.as_div }}
+				  <button type="submit" class="main_btn">Login</button>
+				</form>
+				appear in login page when the user have make register for the first time
+				this message apear one time only! {% endcomment %}
+			
+				<form method="post">
+				  {% csrf_token %} {{ form.as_div }}
+				  <button type="submit" class="main_btn">Login</button>
+				</form>
+			</div>
+		</div>
+	  </section>
+	  
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Logout File -->
+    <link rel="stylesheet" href="{% static "css/pages/Logout/logout.css" %}">
+    <!-- Main File -->
+    <link rel="stylesheet" href="{% static "css/pages/mainFile/main.css" %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<section class="logout">
+    <div class="container">
+        <h1>Logout Page</h1>
+        <div>Do You Have an Account? <a href="{% url 'login' %}">Login</a> </div>{% comment %} Link for login page {% endcomment %}
+        <div>Do Not Have an Account? <a href="{% url 'register' %}">SignUp</a></div> {% comment %} link for register page {% endcomment %}    
+        </div>
+        
+</section>    
+</body>
+</html>

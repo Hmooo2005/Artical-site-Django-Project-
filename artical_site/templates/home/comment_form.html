@@ -1,0 +1,14 @@
+{% block content %} {% comment %} {% extends "home/header.html" %}  Add comment page {% endcomment %}
+{% load static %}
+<link rel="stylesheet" href="{% static "css/pages/new_post/new_post.css" %}">
+<section>
+<div class="container">
+	<form method="POST" class="form" enctype="multipart/form-data">
+		{% csrf_token %} 
+		<textarea></textarea>
+		<button type="submit" class="main_btn">Post Comment</button>
+	</form>
+</div>	
+</section>
+
+{% endblock content %}

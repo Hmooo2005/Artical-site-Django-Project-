@@ -1,0 +1,43 @@
+
+{% extends "home/header.html" %} {% block content %} {% load static %}
+<link rel="stylesheet" href="{% static "css/pages/artical_detail/artical_detail.css"%}">
+	 {% comment %} page for the details of the artical enter it when you click
+	in the artical title in the home page {% endcomment %}
+
+	<section class="artical_detail">
+	  <div class="container">
+	    <div class="image">
+			<img src="{{ object.img.url }}" />
+		</div>
+	    <div class="content">
+	    <div class="au_pic">
+	      <img src="{{ object.author.profile.img.url }}" width="100px" />
+	      <span>
+			<h3><strong>{{ object.author|capfirst }}</strong></h3>
+	      <p>{{ object.artical_date|date:'F d,Y' }}</p>
+		  </span>
+	    </div>		
+		<div class="center">
+		  <h2>{{ object.title|capfirst }}</h2>
+		  {% comment %} author name {% endcomment %}
+		  <p class="artical">{{ object.content|capfirst }}</p>
+		</div>
+		</div>
+	</div>
+	 {% if user.is_authenticated and user == object.author %} 
+	   <button class="del main_btn" type="submit">
+	     <a href="{% url 'artical_delete' object.id %}">
+			<i class="fas fa-trash"></i>
+		</a>
+	   </button>
+	 {% endif%}
+	</section>
+
+	{% for comment in object.comments.all %}
+		<p><img src="{{ comment.user.profile.img.url }}" width="100px" /></p>
+	    <p style="color: white">{{ comment.user }}</p>
+		<p style="color: white">{{ comment.content }}</p>
+	{% endfor %}
+
+
+{% endblock content %}

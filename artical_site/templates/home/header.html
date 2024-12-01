@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Font Awesome File -->
+    <link rel="stylesheet" href="{% static "css/pages/mainFile/all.min.css" %}">
+    <!-- Main Css File -->
+    <link rel="stylesheet" href="{% static "css/pages/mainFile/main.css" %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articals</title>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="{% url "home" %}"><img src="{% static "logo/logo.png" %}" alt=""></a>
+        </div>
+        <ul>
+            <li><a href="{% url "home" %}"> <i class="fa fa-home"></i> Home</a></li>
+            <li><a href="{% url "profile" %}"><i class="fas fa-user"></i> Profile</a></li>
+            <li><a href="{% url "logout" %}">Logout</a>
+        </ul>
+    </header>
+    {% block content %}
+    {% endblock content %}
+    <script src="{% static "js/header/header.js" %}"></script>
+</body>
+</html>

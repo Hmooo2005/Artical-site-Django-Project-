@@ -1,0 +1,15 @@
+{% extends "home/header.html" %}
+
+{% block content %}
+
+{% comment %} Delete artical page {% endcomment %}
+
+		<h1>Delete Post</h1>
+		<form method="POST">
+			{% csrf_token %}
+			<h2>Are You sure you wnat to delete "{{ object.title }}" Post</h2>
+			<button style="color: red;border-color: red;" type="submit">Delete</button> {% comment %} a buttom for delete the artical delete the style atribute {% endcomment %}
+			<button><a href="{% url 'artical_details' object.id %}">Cancle</a></button>{% comment %} cancle buttom that exit from the delete page and bake to details page add style if you want {% endcomment %}
+		</form>
+
+{% endblock content %}

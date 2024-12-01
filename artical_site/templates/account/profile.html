@@ -1,0 +1,24 @@
+{% extends "home/header.html" %} {% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static "css/pages/Profile/profile.css" %}">
+
+{% for message in messages %}
+<div class="alert_message">{{ message }}</div>
+{% endfor %}
+<div class="profile_img">
+	<img src="{{ user.profile.img.url }}"/>
+	<div class="content_profile">
+		<h3>{{ user.username }}</h3>
+		<h3>{{ user.email }}</h3>
+	</div>
+</div>
+<section class="profile">
+	<div class="container">
+		<form method="POST" enctype="multipart/form-data">
+		  {% csrf_token %} {{ u_form.as_p }} {{ p_form.as_p }}
+		  <button class="main_btn" type="submit">Save</button>
+		</form>
+	</div>
+</section>
+
+{% endblock content %}

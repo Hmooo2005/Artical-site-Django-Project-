@@ -1,0 +1,15 @@
+{% extends "home/header.html" %} {% block content %} {% comment %} Add artical
+page {% endcomment %}
+{% load static %}
+<link rel="stylesheet" href="{% static "css/pages/new_post/new_post.css" %}">
+<section>
+<div class="container">
+	<form method="POST" class="form" enctype="multipart/form-data">
+		{% csrf_token %} 
+		{{ form.as_div }}
+		<button type="submit" class="main_btn">Post</button>
+	</form>
+</div>	
+</section>
+
+{% endblock content %}
